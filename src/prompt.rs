@@ -19,6 +19,8 @@ pub struct Prompt {
     default_value: Option<String>,
     #[builder(default)]
     indent: usize,
+    #[builder(default)]
+    allow_empty: bool,
 }
 
 impl Prompt {
@@ -134,7 +136,7 @@ impl Prompt {
             eprint!("{i}  {} ", style(">").bold());
             let input = self.read_line(term).await?;
 
-            if !input.is_empty() {
+            if self.allow_empty || !input.is_empty() {
                 return Ok(input);
             } else {
                 status::error(format!("{i}  Empty input"), "");
