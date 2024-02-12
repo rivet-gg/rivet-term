@@ -153,7 +153,7 @@ impl Prompt {
             eprint!("{i}  {} ", style("[input hidden]").bold());
             let input = self.read_line_secure(term).await?;
 
-            if !input.is_empty() {
+            if self.allow_empty || !input.is_empty() {
                 return Ok(input);
             } else {
                 status::error(format!("{i}  Empty input"), "");
