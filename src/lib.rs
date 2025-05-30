@@ -8,5 +8,5 @@ pub mod prompt;
 pub mod status;
 
 pub fn terminal() -> console::Term {
-    console::Term::stderr()
+	console::Term::stderr()
 }

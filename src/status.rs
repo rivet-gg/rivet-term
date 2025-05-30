@@ -2,7 +2,7 @@ use console::style;
 use std::fmt::Display;
 
 pub fn info(msg: impl Display, data: impl Display) {
-    eprintln!("{} {}", style(msg).bold().blue(), data);
+	eprintln!("{} {}", style(msg).bold().blue(), data);
 }
 
 pub fn progress(msg: impl Display, data: impl Display) {
@@ -10,7 +10,7 @@ pub fn progress(msg: impl Display, data: impl Display) {
 }
 
 pub fn success(msg: impl Display, data: impl Display) {
-    eprintln!("{} {}", style(msg).bold().green(), data);
+	eprintln!("{} {}", style(msg).bold().green(), data);
 }
 
 pub fn warn(msg: impl Display, data: impl Display) {
@@ -18,5 +18,5 @@ pub fn warn(msg: impl Display, data: impl Display) {
 }
 
 pub fn error(msg: impl Display, data: impl Display) {
-    eprintln!("{} {}", style(msg).bold().red(), data);
+	eprintln!("{} {}", style(msg).bold().red(), data);
 }
